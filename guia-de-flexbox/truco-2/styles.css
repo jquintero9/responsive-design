@@ -1,0 +1,52 @@
+* {
+    box-sizing: border-box;
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+body, html {
+    background-color: #e2e9f1;
+    font-family: sans-serif;
+    font-size: 16px;
+
+}
+
+main {
+    background-color: #222222;
+    color: #CCC;
+    justify-content: flex-end;
+}
+
+aside {
+    background-color: pink;
+    color: #222222;
+}
+
+main, aside {
+    flex: 0 0 50%;
+    align-items: center;
+    font-size: 2rem;
+}
+
+.flex-container { display: flex; }
+
+.page-container {
+    min-height: 100vh;
+}
+
+
+@media screen and (max-width: 600px) {
+    .page-container {
+        flex-direction: column;
+    }
+
+    main { align-items: flex-end; }
+    aside { align-items: flex-start; }
+    main, aside {
+        flex: 0 0 50vh;
+        justify-content: center;
+    }
+}
+
+

@@ -1,0 +1,45 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+html {
+    background-color: #CCCCCC;
+    font-family: sans-serif;
+    font-size: 16px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    /*align-items: center;*/
+
+    height: 150px;
+    background-color: #222;
+}
+
+
+ul {
+    align-self: flex-end;
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin: 0 1rem 1rem 0;
+}
+
+ul li {
+    background-color: #FFF;
+    border-radius: 5px;
+    padding: 0 .5rem;
+    line-height: 2;
+    font-size: 1.3rem;
+}
+
+ul li:not(:first-child) { margin-left: .5rem; }
+
+img {
+    align-self: flex-end;
+    border-radius: 50%;
+    margin-right: auto;
+}

@@ -1,0 +1,66 @@
+Main Size es relativo al Main Axis y su valor por defecto es width.
+Cross Size es relativo al Cross Axis y su valor por defecto es el height.
+
+¿CÓMO SE CALCULA EL CROSS SIZE?:
+    1. Definiendo un tamaño especifico a los elementos.
+    2. Automaticamente cuando no se ha definido un tamaño (1) y no se han
+       definido valores a las propiedades align-items o align-content.
+       En este caso el CROSS SIZE esta definido por la propiedad stretch.
+    3. Sin definir un tamaño especifico, pero definiendo un valor distinto
+       de stretch a la propiedad align-items o align-content
+
+
+¿CÓMO SE CALCULA EL MAIN SIZE?:
+    1. Mediante el espacio disponible y el espacio ocupado por los elementos.
+    2. Los margenes de los elementos nunca se colapsan.
+    3. El espacio disponible podría ser negativo, es decir que la diferencia
+       entre el tamaño del contenedor - el espacio ocupado por todos sus items es menor que cero.
+
+
+PROPIEDADES DE LOS FLEX-ITEMS:
+
+    1. flex-basis:
+       Define el tamaño base del main size (es el width si el main size es horizontal
+       y es el height si el main size es vertical), su valor por defecto es auto,
+       es decir que el tamaño del elemento esta definido por su contenido.
+       Esta propiedad tiene mayor relevacia sobre el width o height.
+
+    2. flex-grow:
+       Define el factor de crecimiento de los elementos. Este factor se calcula
+       de la siguiente manera:
+       esp-disp = Espcio disponible
+       suma-flex-grow = suma de todos los valores de la propiedad flex-grow de todos los elementos.
+       fact-grow = El factor de crecimiento indica el tamaño que crecerá cada elemento.
+
+       fact-grow = esp-disp / suma-flex-grow
+
+       ejemplo:
+
+       flex-item-1 { flex-grow: 1; }
+       flex-item-2 { flex-grow: 2; }
+       flex-item-3 { flex-grow: 1; }
+       flex-item-4 { flex-grow: 1; }
+
+       esp-disp = 100px
+       suma-flex-grow = 5
+       fact-grow = 100px / 5 = 20px
+
+       grow-item-1 = fact-grow: 20px * flex-grow: 1 = 20px
+       grow-item-2 = fact-grow: 20px * flex-grow: 2 = 40px
+
+    3. flex-shrink:
+       Es el contrario de flex-grow, en vez de crecer disminuye el tamaño del item.
+       por defecto el valor de la propiedad flex-shrink es 1.
+
+
+    ABREVIATURA DE LAS PROPIEDADES flex-basis, flex-grow y flex-shrink
+
+        Para aplicar estas propiedades de una forma abreviada se utiliza
+        la propiedad flex: valor-grow valor-shrink valor-basis
+
+        El valor por defecto de esta propiedad es flex: 0 1 auto;
+        Admás se puede definir mediante los siguientes valores.
+        flex: none <==> flex: 0 0 auto;
+        flex: auto <==> flex: 1 1 auto;
+        flex: N    <==> flex N 0 0;
+

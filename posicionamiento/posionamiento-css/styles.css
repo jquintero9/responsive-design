@@ -1,0 +1,47 @@
+
+body, html {
+    font-size: 16px;
+    font-family: sans-serif;
+}
+
+div {
+    /*posición por defecto*/
+    position: relative;
+    width: 300px;
+    padding: 20px 0;
+    text-align: center;
+    color: #FFF;
+    background-color: #205081;
+    border: thin solid #FF5700;
+}
+
+.pos-rel {
+    position: relative;
+    left: 100%;
+}
+
+.pos-abs {
+    position: absolute;
+    right: 50%;
+    top: 20%;
+}
+
+.pos-fix {
+    position: fixed;
+    left: 0;
+    top: 0;
+}
+
+.pos-sticky {
+    position: sticky;
+    top: 0;
+    left: 100px;
+}
+
+.float-left {
+    float: left;
+}
+
+.float-right {
+    float: right;
+}

@@ -1,0 +1,83 @@
+/*La formula de la PC-TV*/
+
+/*1. Posicionameinto:*/
+    /*position, top, left, right, bottom, clear, z-index;*/
+/*2. Modelo de Caja:*/
+    /*display, float, margin, paddign, width, height;*/
+/*3. Tipografía:*/
+    /*font-family, font-size, line-height, color, text-align;*/
+/*4. Visual:*/
+    /*background, border, border-radius, outline, opacity;*/
+
+@font-face {
+    font-family: 'batman';
+    src: url('../fonts/batman_evolution_logo_font_g-webfont.woff2') format('woff2'),
+    url('../fonts/batman_evolution_logo_font_g-webfont.woff') format('woff'),
+    url('../fonts/batman_evolution_logo_font_g-webfont.ttf') format('truetype'),
+    url('../fonts/batman_evolution_logo_font_g-webfont.svg#batman_evolution_logo_fontRg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.allvh { min-height: 100vh; }
+.space-of-header { padding-top: 5rem; }
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    width: 100%;
+    border-bottom: thin solid #222;
+    background-color: #000;
+}
+
+.logo {
+    width: 4rem;
+    height: 4rem;
+    text-indent: 9999px;
+    background: transparent url("../img/logo2.svg") no-repeat center;
+    background-size: cover;
+}
+
+.menu { font-weight: 700; }
+
+.home {
+    background: #000 url("../img/batman-1.jpg") no-repeat center;
+    background-size: cover;
+}
+
+.home h2 {
+    margin: 40vh auto 0;
+    font-size: 20vw;
+    font-weight: 900;
+    letter-spacing: 1vw;
+    color: #EECF27;
+}
+
+.batman-img { width: 50%; }
+
+.logos ul { font-family: 'batman'; }
+
+.logos-video .btn-video {
+    margin: 32px auto;
+    margin: 2rem auto;
+    box-shadow: 0 1px 5px 1px #222;
+    background-color: #EECF27;
+    color: #111;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.logos-video .btn-video:hover {
+    background-color: #FFF;
+    box-shadow: 0 1px 5px 1px #EECF27;
+    color: #EECF27;
+
+}
+.logos-video iframe {
+    margin: 32px auto;
+    margin: 2rem auto;
+    max-width: 850px;
+    height: 480px;
+}

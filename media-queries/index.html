@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Media Queries</title>
+  <meta http-equiv="X-UA-COMPATIBLE" content="IE=edge, chrome=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" >
+  <!--<script src="" async></script>  Carga un documento js de manera asíncrona -->
+  <!--<script src="" defer></script>v Carga un documento js una vez halla cargado la página por completo. -->
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      font-size: 16px;
+      font-family: sans-serif;
+      background-color: #f6f6f6;
+      color: #FFF;
+      text-align: center;
+    }
+
+    .header {
+
+      background-color: #222;
+      min-height: 50vh;
+    }
+
+    .info {
+      /*width: 33.33%;*/
+    }
+
+    .info::after {
+      content: "+1200px";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translateX(-50%) translateY(-50%);
+      padding: 3rem;
+      width: 50%;
+      font-size: 1.5rem;
+      border: thin solid #CCCCCC;
+      background-color: #222;
+    }
+
+    /*
+      Desktop First
+
+      Estilos Generales para +1200px
+
+      1200px  1024px 768px 600px   480px  320px
+      75em    64em   48em  37.5em  30em   20em
+    */
+
+    @media screen and (max-width: 75em) {
+      .header { background-color: red; }
+      .info::after {
+        content: "1200px";
+        background-color: red;
+      }
+    }
+
+    @media screen and (max-width: 64em) {
+      .header { background-color: blue; }
+      .info::after {
+        content: "1024px";
+        background-color: blue;
+      }
+    }
+
+    @media screen and (max-width: 48em) {
+      .header { background-color: green; }
+      .info::after {
+        content: "768px";
+        background-color: green;
+      }
+    }
+
+    @media screen and (max-width: 37.5em) {
+      .header { background-color: pink; color: #222;}
+      .info::after {
+        content: "600px";
+        background-color: pink;
+        color: #222;
+        border: thin solid #222;
+      }
+    }
+
+    @media screen and (max-width: 30em) {
+      .header { background-color: steelblue; }
+      .info::after {
+        content: "480px";
+        background-color: steelblue;
+      }
+    }
+
+    @media screen and (max-width: 20em) {
+      .header { background-color: peru; color: #CCCCCC}
+      .info::after {
+        content: "320px";
+        background-color: peru;
+        color: #CCCCCC;
+      }
+    }
+
+    .content {
+      height: 50vh;
+      background-color: #205081;
+    }
+
+    .content h2 {
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 2rem;
+      font-weight: bold;
+    }
+
+  </style>
+</head>
+<body>
+  <header class="header">
+    <h1>Responsive Design</h1>
+    <div class="info"></div>
+  </header>
+  <section class="content">
+    <h2>Media Query whit JavaScript!!</h2>
+  </section>
+  <!--<iframe width="560" height="315" src="https://www.youtube.com/embed/rGdgmNZcZoQ?list=PLvq-jIkSeTUbFYbzpJFN1GLMBZnm9hX5G" frameborder="0" allowfullscreen></iframe>-->
+  <script>
+    let mq768 = window.matchMedia('(max-width: 768px)');
+    let content = document.querySelectorAll(".content")[0];
+    const iframe = makeIframe();
+
+    function makeIframe() {
+      let iframe = document.createElement('iframe');
+      iframe.width = 560;
+      iframe.height = 315;
+      iframe.src = "https://www.youtube.com/embed/rGdgmNZcZoQ?list=PLvq-jIkSeTUbFYbzpJFN1GLMBZnm9hX5G";
+      iframe.frameborder="0";
+      iframe.allowfullscreen = true;
+      return iframe;
+    }
+
+    function mediaQueries(mq) {
+      console.log(content);
+      console.log(iframe);
+      if (mq.matches) {
+        content.style.backgroundColor = "#222";
+
+        try {
+          content.removeChild(iframe);
+        }
+        catch (Exception) {
+          console.log("Error al remover el iframe");
+        }
+      }
+      else {
+        content.style.backgroundColor = "#205081";
+        content.appendChild(iframe);
+      }
+    }
+
+    mediaQueries(mq768);
+    mq768.addListener(mediaQueries);
+
+  </script>
+</body>
+</html>

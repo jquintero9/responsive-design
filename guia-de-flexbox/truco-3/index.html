@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Menú Responsive con Flexbox</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <h1>ABC Company</h1>
+  <nav>
+    <div id="toggle-menu" class="jhon">Menú</div>
+    <ul class="menu">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+  <script src="jquery.js"></script>
+  <script>
+
+    $(window).ready(function() {
+      $("#toggle-menu").on("click", function() {
+        $(this).next().slideToggle();
+      });
+    });
+
+    var toggleButton = document.querySelector("#toggle-menu");
+
+    var array = ["jhon", "jaime", "quintero"];
+    console.log(array);
+    console.log(toggleButton.classList);
+    if (toggleButton.classList.contains("jhon")) {
+      console.log("ok");
+    }
+    else {
+      console.log("no")
+    }
+
+    toggleButton.addEventListener("click", function() {
+      console.log(this);
+      if (!this.classList.contains("toggle")) {
+        this.nextElementSibling.style.display = "block";
+//        this.nextElementSibling.style.top = "150px";
+        this.classList.add("toggle");
+      }
+      else {
+        this.classList.remove("toggle");
+//        this.nextElementSibling.style.top = "-195px";
+      }
+    });
+  </script>
+</body>
+</html>

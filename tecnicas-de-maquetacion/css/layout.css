@@ -1,0 +1,24 @@
+/*Técnica 1 float left/right*/
+.floatl { float: left; }
+.floatr { float: right; }
+.clear, .clear::before, .clear::after { clear: both; }
+.clear::before, .clear::after {
+    content: "";
+    display: block;
+}
+
+/*Técnica 2 de Display inline-block*/
+.i-b { display: inline-block; }
+.v-baseline { vertical-align: baseline; }
+.v-bottom { vertical-align: bottom; }
+.v-middle { vertical-align: middle; }
+.v-top { vertical-align: top; }
+.f-0 { font-size: 0; }
+
+/*Técnica 3 Display table*/
+.table { display: table; }
+.table-cell { display: table-cell; }
+
+/*Técnica 4 Displa flex*/
+.flex { display: flex; }
+.flex-item { flex: none; }

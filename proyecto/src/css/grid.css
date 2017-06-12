@@ -1,0 +1,77 @@
+.container, .container-fluid {
+    display: block;
+    width: 100%;
+    margin: auto;
+    /*background-color: #EEE;*/
+}
+
+.container { max-width: 1200px; }
+
+.item {
+    display: block;
+    padding: 16px;
+    padding: 1rem;
+    /*background-color: #CCC;*/
+}
+
+.ph1 { width: 8.333333333333333%; }
+.ph2 { width: 16.66666666666667%; }
+.ph3 { width: 25%; }
+.ph4 { width: 33.33333333333333%; }
+.ph5 { width: 41.66666666666667%; }
+.ph6 { width: 50%; }
+.ph7 { width: 58.33333333333333%; }
+.ph8 { width: 66.66666666666667%; }
+.ph9 { width: 75%; }
+.ph10 { width: 83.33333333333333%; }
+.ph11 { width: 91.66666666666667%; }
+.ph12 { width: 100%; }
+
+/*1200px  1024px 768px 600px   480px  320px*/
+/*75em    64em   48em  37.5em  30em   20em*/
+
+/*480px*/
+@media screen and (min-width: 30em) {
+    .sm1 { width: 8.333333333333333%; }
+    .sm2 { width: 16.66666666666667%; }
+    .sm3 { width: 25%; }
+    .sm4 { width: 33.33333333333333%; }
+    .sm5 { width: 41.66666666666667%; }
+    .sm6 { width: 50%; }
+    .sm7 { width: 58.33333333333333%; }
+    .sm8 { width: 66.66666666666667%; }
+    .sm9 { width: 75%; }
+    .sm10 { width: 83.33333333333333%; }
+    .sm11 { width: 91.66666666666667%; }
+    .sm12 { width: 100%; }
+}
+/*768px*/
+@media screen and (min-width: 48em) {
+    .md1 { width: 8.333333333333333%; }
+    .md2 { width: 16.66666666666667%; }
+    .md3 { width: 25%; }
+    .md4 { width: 33.33333333333333%; }
+    .md5 { width: 41.66666666666667%; }
+    .md6 { width: 50%; }
+    .md7 { width: 58.33333333333333%; }
+    .md8 { width: 66.66666666666667%; }
+    .md9 { width: 75%; }
+    .md10 { width: 83.33333333333333%; }
+    .md11 { width: 91.66666666666667%; }
+    .md12 { width: 100%; }
+}
+/*1024px*/
+@media screen and (min-width: 64em) {
+    .lg1 { width: 8.333333333333333%; }
+    .lg2 { width: 16.66666666666667%; }
+    .lg3 { width: 25%; }
+    .lg4 { width: 33.33333333333333%; }
+    .lg5 { width: 41.66666666666667%; }
+    .lg6 { width: 50%; }
+    .lg7 { width: 58.33333333333333%; }
+    .lg8 { width: 66.66666666666667%; }
+    .lg9 { width: 75%; }
+    .lg10 { width: 83.33333333333333%; }
+    .lg11 { width: 91.66666666666667%; }
+    .lg12 { width: 100%; }
+}
